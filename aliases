@@ -1,0 +1,85 @@
+
+# Allow sudo to be used by aliases
+alias sudo='sudo '
+# Get package
+alias getme='sudo apt-get install'
+# Execute previous command with sudo permissions
+alias wtf='sudo $(history -p !!)'
+# I accidentally type .. instead of cd ..
+alias ..='cd ..'
+# This is for finding out what is taking so much space on your drives!
+alias diskspace='du -S | sort -n -r |more'
+# Shortcut for git upload
+alias gpom='git push origin master'
+# IP Address ( actual and local )
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+# ADB and fastboot
+alias adb='sudo ./adb '
+alias fastboot='sudo ./fastboot '
+# Shutdown
+alias shutdown='sudo shutdown now'
+# Alias for fortune
+alias woo='fortune'
+alias f='fortune'
+alias fsearch='~/dotfiles/fsearch'
+# Use python3 instead of python2
+alias python='python3 '
+alias pip='pip3 '
+alias fuck='eval $(thefuck $(fc -ln -1))'
+alias please='fuck'
+alias gc='google-chrome'
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0  ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias sem='cd /home/aasis21/Desktop/4th\ Sem'
+alias mp_on='xinput --enable 12'
+alias mp_off='xinput --disable 12'
+
+alias m_cse='sshfs akashish@gpu2.cse.iitk.ac.in: /home/aasis21/cse_server/'
+alias u_cse='fusermount -u /home/aasis21/cse_server'
+alias gpu2='ssh akashish@gpu2.cse.iitk.ac.in'
+
+
+# atom alias
+alias a='atom'
+alias ah='atom .'
+alias apmup='apm update --no-confirm'
+alias apmi='apm install'
+alias vi='vim'
+
+# List directory contents
+alias la='ls -AF'       # Compact view, show hidden
+alias ll='ls -al'
+alias l='ls -a'
+alias l1='ls -1'
+#sudo
+alias _="sudo"
+
+alias c='clear'
+alias k='clear'
+alias cls='clear'
+
+alias edit="$EDITOR"
+alias pager="$PAGER"
+
+alias q='exit'
+
+alias st='~/.stopwatch'
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias nyo="cd ~/Desktop/NYO"
+alias probQ="cd ~/Desktop/problog/probQ"
+alias probq="python probQparser.py"
+alias intern="cd ~/Desktop/summers/intern"
+# stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias lexidest="~/.lexidest/lexidest.out"
+alias sem='cd ~/Desktop/5th_Sem'
+
+
+# gem OS
+export M5_PATH=/home/aasis21/gemOS/gem5/gemos
+alias gemos="/home/aasis21/gemOS/gem5/start.sh"
+
+
+
