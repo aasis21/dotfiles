@@ -50,12 +50,6 @@ shopt -s cdspell
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-function twain {
-  quote = fortune
-  while [ quote | grep Twain ]; do
-    quote = fortune
-  done
-}
 
 export EDITOR="vim"
 ###############################################################################################################
@@ -165,14 +159,6 @@ case "$TERM" in
 esac
 
 
-function _update_ps1() {
-      PS1="$(powerline-shell $?)"
-
-}
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1  ]]; then
-      PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-    fi
 
 ###############################################################################################################
 # 05. Aliases                                                                                                 #
@@ -193,8 +179,14 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+if [ -f ~/.exports ]; then
+  . ~/.exports
 fi
 
 ###############################################################################################################
@@ -213,48 +205,8 @@ if ! shopt -oq posix; then
 fi
 
 ###############################################################################################################
-# 07. Extras                                                                                                  #
-###############################################################################################################
+# 07. Extras        
 
- # Run ScreenFetch and fortune on start
- if [ -f /usr/bin/screenfetch -o -f /bin/screenfetch ]; then
-   tput rmam
-   fortune
-#   screenfetch
-   tput smam
- elif [ -f ~/dotfiles/screenfetch ]; then
-   tput rmam
-   fortune
- #  ~/dotfiles/screenfetch
-   tput smam
- fi
+[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
 
 
-if [ -f /etc/bash_completion ] && ! shopt -oq posix;
-then
-    . /etc/bash_completion
-    . /usr/share/bash-completion/completions/git
-fi
-function_exists() {
-    declare -f -F $1 > /dev/null
-    return $?
-}
-
-for al in `__git_aliases`; do
-    alias g$al="git $al"
-    complete_func=_git_$(__git_aliased_command $al)
-    function_exists $complete_fnc && __git_complete g$al $complete_func
-done
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export COOKIE="Cookie: id=hackcave; timestamp=1615128584;auth=110CA10531274FC36E8AFF03D430EBB9C9E55FB8; XSRF-TOKEN=123;"
-
-export XSRF="X-XSRF-TOKEN:123"
-PATH=$PATH:/home/aasis21/Desktop/NYO/arc/arcanist/bin/

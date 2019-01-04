@@ -75,11 +75,11 @@ alias intern="cd ~/Desktop/summers/intern"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias lexidest="~/.lexidest/lexidest.out"
 alias sem='cd ~/Desktop/5th_Sem'
-
+alias g='cd ~/github'
 
 # gem OS
-export M5_PATH=/home/aasis21/gemOS/gem5/gemos
-alias gemos="/home/aasis21/gemOS/gem5/start.sh"
+alias gemos="/home/aasis21/gem5/start.sh"
 
 
+export PATH=~/anaconda3/bin:$PATH
 
