@@ -273,5 +273,12 @@ bindsym $mod+Ctrl+r exec "i3-nagbar -t warning -m ' Do you really want to restar
 
 
 
-bindsym $mod+p title_format "| %title | %class |"
+bindsym $mod+t title_format "| %title | %class |"
 bindsym --release button2 kill
+
+
+# multiple monitor
+bindsym $mod+u exec --no-startup-id  xrandr --output eDP1 --off   
+bindsym $mod+i exec --no-startup-id  xrandr --output HDMI1 --off   
+bindsym $mod+o exec --no-startup-id  xrandr --output eDP1 --auto --left-of HDMI1
+bindsym $mod+p exec --no-startup-id  xrandr --output HDMI1 --auto --right-of eDP1
