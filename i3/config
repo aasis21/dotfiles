@@ -248,7 +248,8 @@ exec --no-startup-id nm-applet
 
 #mouse click
 exec --no-startup-id xinput set-prop 12 "libinput Tapping Enabled" 1
-
+#applet port
+exec --no-startup-id xrandr --output HDMI1 --primary
 
 # Redshift Applet
 exec --no-startup-id systemctl --user start redshift-gtk

@@ -74,12 +74,27 @@ alias intern="cd ~/Desktop/summers/intern"
 # stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias lexidest="~/.lexidest/lexidest.out"
-alias sem='cd ~/Desktop/5th_Sem'
+alias sem='cd ~/sem6'
 alias g='cd ~/github'
 
-# gem OS
-alias gemos="/home/aasis21/gem5/start.sh"
 
 
 export PATH=~/anaconda3/bin:$PATH
 
+
+# alias for youtube Download
+ydl() {
+    if [ $2 -eq 1 ]
+    then
+        youtube-dl -o "~/ydl/1/%(title)s.%(ext)s" -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "$1"       
+    elif [ $2 -eq 2 ] 
+    then
+        youtube-dl -o "~/ydl/2/%(title)s.%(ext)s" -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "$1"
+    elif [ $2 -eq 3 ] 
+    then
+        youtube-dl -o "~/ydl/3/%(title)s.%(ext)s" -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "$1"  
+    else
+        youtube-dl -o "~/ydl/%(title)s.%(ext)s" -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "$1"       
+    fi
+     
+}
