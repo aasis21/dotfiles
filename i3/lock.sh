@@ -4,4 +4,4 @@
 i3lock -i ~/.config/i3/images/lock.png -c 000000
 
 # Turn the screen off after a delay.
-sleep 30; pgrep i3lock && xset dpms force off
+sleep 2; xset dpms force off

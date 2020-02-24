@@ -35,7 +35,7 @@ alias sem='cd /home/aasis21/Desktop/4th\ Sem'
 alias mp_on='xinput --enable 12'
 alias mp_off='xinput --disable 12'
 
-alias m_cse='sshfs akashish@gpu2.cse.iitk.ac.in: /home/aasis21/cse_server/'
+alias m_cse='sshfs akashish@csews15.cse.iitk.ac.in: /home/aasis21/cse_server/'
 alias u_cse='fusermount -u /home/aasis21/cse_server'
 alias gpu2='ssh akashish@gpu2.cse.iitk.ac.in'
 
@@ -80,8 +80,9 @@ alias g='cd ~/github'
 
 
 export PATH=~/anaconda3/bin:$PATH
-
-
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/.go
+export PATH=~/.mpi/bin:$PATH
 # alias for youtube Download
 ydl() {
     if [ $2 -eq 1 ]
